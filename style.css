@@ -170,23 +170,18 @@ footer {
     font-family: 'Courier New', Courier, monospace;
     line-height: 1.5;
 }
-.service-areas {
-    text-align: center;
-}
+
+.service-areas { text-align: center; }
 
 .maps-container {
     display: flex;
-    flex-direction: column;     /* stacked on desktop AND mobile */
+    flex-direction: column;
     gap: 30px;
     align-items: center;
     margin: 30px 0;
 }
 
-.map-item {
-    max-width: 520px;
-    width: 100%;
-    cursor: zoom-in;
-}
+.map-item { max-width: 520px; width: 100%; cursor: zoom-in; }
 
 .service-map {
     width: 100%;
@@ -196,11 +191,8 @@ footer {
     transition: transform 0.2s;
 }
 
-.service-map:hover {
-    transform: scale(1.03);
-}
+.service-map:hover { transform: scale(1.03); }
 
-/* Legend */
 .legend {
     font-family: 'Consolas', 'Courier New', monospace;
     color: #64748b;
@@ -217,10 +209,8 @@ footer {
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
     background-color: rgba(15, 23, 42, 0.95);
     align-items: center;
     justify-content: center;
@@ -241,9 +231,6 @@ footer {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
-    user-select: none;
 }
 
-.close:hover {
-    color: #e2e8f0;
-}
+.close:hover { color: #e2e8f0; }
