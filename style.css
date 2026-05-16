@@ -170,50 +170,80 @@ footer {
     font-family: 'Courier New', Courier, monospace;
     line-height: 1.5;
 }
-
 .service-areas {
     text-align: center;
 }
 
 .maps-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;     /* stacked on desktop AND mobile */
     gap: 30px;
-    justify-content: center;
+    align-items: center;
     margin: 30px 0;
 }
 
-.map-card {
-    background-color: #1e2937;
-    border: 1px solid #334155;
-    border-radius: 6px;
-    padding: 15px;
-    max-width: 420px;
-    flex: 1;
-    min-width: 300px;
-}
-
-.map-card h3 {
-    font-family: 'Courier New', Courier, monospace;
-    color: #94a3b8;
-    margin-bottom: 12px;
-    font-size: 1.1rem;
+.map-item {
+    max-width: 520px;
+    width: 100%;
+    cursor: zoom-in;
 }
 
 .service-map {
     width: 100%;
     height: auto;
-    border-radius: 4px;
+    border-radius: 6px;
     border: 1px solid #334155;
+    transition: transform 0.2s;
 }
 
+.service-map:hover {
+    transform: scale(1.03);
+}
+
+/* Legend */
 .legend {
     font-family: 'Consolas', 'Courier New', monospace;
     color: #64748b;
     font-size: 0.95rem;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .blue-dot  { display: inline-block; width: 12px; height: 12px; background: #3b82f6; border-radius: 50%; }
 .green-dot { display: inline-block; width: 12px; height: 12px; background: #22c55e; border-radius: 50%; }
 .grey-dot  { display: inline-block; width: 12px; height: 12px; background: #64748b; border-radius: 50%; }
+
+/* Lightbox */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 95%;
+    max-height: 90%;
+    border: 2px solid #64748b;
+    border-radius: 6px;
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #94a3b8;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close:hover {
+    color: #e2e8f0;
+}
