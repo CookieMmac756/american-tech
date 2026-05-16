@@ -66,7 +66,7 @@ ul li {
 }
 
 ul li:before {
-    content: "> ";
+    content: "- ";
     color: #94a3b8;
     position: absolute;
     left: 8px;
@@ -151,7 +151,7 @@ footer {
 }
 
 .certifications li:before {
-    content: "> ";
+    content: "- ";
     color: #94a3b8;
     position: absolute;
     left: 10px;
@@ -170,3 +170,50 @@ footer {
     font-family: 'Courier New', Courier, monospace;
     line-height: 1.5;
 }
+
+.service-areas {
+    text-align: center;
+}
+
+.maps-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.map-card {
+    background-color: #1e2937;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 15px;
+    max-width: 420px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.map-card h3 {
+    font-family: 'Courier New', Courier, monospace;
+    color: #94a3b8;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.service-map {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #334155;
+}
+
+.legend {
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+.blue-dot  { display: inline-block; width: 12px; height: 12px; background: #3b82f6; border-radius: 50%; }
+.green-dot { display: inline-block; width: 12px; height: 12px; background: #22c55e; border-radius: 50%; }
+.grey-dot  { display: inline-block; width: 12px; height: 12px; background: #64748b; border-radius: 50%; }
