@@ -197,7 +197,25 @@ footer {
     font-family: 'Consolas', 'Courier New', monospace;
     color: #64748b;
     font-size: 0.95rem;
-    margin-top: 15px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;     /* stacks vertically on mobile */
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+}
+
+@media (min-width: 600px) {
+    .legend {
+        flex-direction: row;    /* back to horizontal on bigger screens */
+        gap: 25px;
+    }
+}
+
+.legend span {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .blue-dot  { display: inline-block; width: 12px; height: 12px; background: #3b82f6; border-radius: 50%; }
