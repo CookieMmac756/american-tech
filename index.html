@@ -152,19 +152,18 @@
     <br><br>
     <p>Or, fill out the form below and I'll get back to you as soon as possible.</p>
     <!-- Simple Contact Form -->
-    <form id="contact-form" action="https://formspree.io/f/xdajndgg" method="POST" class="contact-form">
+    <form id="contact-form" class="contact-form">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <input type="tel" name="phone" placeholder="Your Phone Number">
         <textarea name="message" placeholder="How can we help you?" rows="5" required></textarea>
         
-        <!-- Hidden field for nice email subject -->
         <input type="hidden" name="_subject" value="New Contact Form Submission - AmericanTech.us">
         
         <button type="submit" class="btn">Send Message</button>
     </form>
 
-    <!-- Thank You / Success Message -->
+    <!-- Success Message -->
     <div id="success-message" class="success-message" style="display: none;">
         <h3>Thank you!</h3>
         <p>Your message has been sent successfully.<br>I’ll get back to you as soon as possible.</p>
