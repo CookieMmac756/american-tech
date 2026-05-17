@@ -42,6 +42,22 @@
         });
     });
 </script>
+
+<script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    if (form) {
+        form.addEventListener('submit', function () {
+            // Show success message after Formspree processes the submission
+            setTimeout(() => {
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+            }, 800);
+        });
+    }
+</script>
+
 <body>
     <main>
         <header>
@@ -56,31 +72,15 @@
         </section>
 
         <section class="service area">
-            <h2>Service Area</h2>
+            <h2>Service Areas</h2>
             <p>In Person Services: NE Kansas. Though I'm based out of Tecumseh, I can provide IT support as far east as Kansas City, to as far west as Alma.</p><br
             <p>Remote Services: Available nationwide for software support, troubleshooting, and consultations. You might be surprised at how much can be achieved via today's remote technologies.</p>
         </section>
 
-                <section class="certifications">
-            <h2>Certifications & Credentials</h2>
-            <ul>
-                <li>8+ years of IT experience</li>
-                <li>ACITP</li>
-                <li>ACSP</li>
-                <li>JumpCloud Core</li>
-                <li>JumpCloud Advanced</li>
-                <li>CompTIA Security+</li>
-                <li>Google IT Support Professional Certificate</li>
-            </ul>
-            
-            <p class="currently-working">
-                <strong>Currently pursuing these certifications:</strong><br>
-                CompTIA Network+ • MS Endpoint Admin. Assc. • Responsive Web Design
-            </p>
-        </section>
+                
 
       <section class="service-areas">
-    <h2>Service Areas</h2>
+    
     
     <div class="maps-container">
         <div class="map-item">
@@ -97,10 +97,10 @@
     </div>
 
     <p class="legend">
-        <span class="blue-dot"></span> In-person &nbsp;&nbsp;&nbsp;
-        <span class="green-dot"></span> Extended &nbsp;&nbsp;&nbsp;
-        <span class="grey-dot"></span> Remote Support
-    </p>
+    <span class="blue-dot"></span> In-person &nbsp;&nbsp;&nbsp;
+    <span class="green-dot"></span> Extended &nbsp;&nbsp;&nbsp;
+    <span class="grey-dot"></span> Remote
+</p>
 </section>
 
 <!-- Lightbox Modal -->
@@ -124,19 +124,58 @@
             </ul>
         </section>
 
-        <section class="contact">
-            <h2>Get In Touch</h2>
-            <p>Ready to solve your tech problems?</p>
-            <a href="mailto:support@americantech.us" class="btn">Email Me: support@americantech.us</a>
-            <p class="phone">Or call/text: (785) 422-7994</p>
+        <section class="certifications">
+            <h2>Certifications & Credentials</h2>
+            <ul>
+                <li>8+ years of IT experience</li>
+                <li>ACITP</li>
+                <li>ACSP</li>
+                <li>JumpCloud Core</li>
+                <li>JumpCloud Advanced</li>
+                <li>CompTIA Security+</li>
+                <li>Google IT Support Professional Certificate</li>
+            </ul>
+            
+            <p class="currently-working">
+                <strong>Currently pursuing these certifications:</strong><br>
+                CompTIA Network+ • MS Endpoint Admin. Assc. • Responsive Web Design
+            </p>
         </section>
+
+        <section class="contact">
+    <h2>Contact me today!</h2>
+    
+    <!-- Email link -->
+    <a href="mailto:support@americantech.us" class="btn">Email: support@americantech.us</a>
+    <br><br>
+    <a href="tel:7854227994" class="btn">Call/Text (785) 422-7994</a>
+    <br><br>
+    <p>Or, fill out the form below and I'll get back to you as soon as possible.</p>
+    <!-- Simple Contact Form -->
+    <form id="contact-form" action="https://formspree.io/f/xdajndgg" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number">
+        <textarea name="message" placeholder="How can we help you?" rows="5" required></textarea>
+        
+        <!-- Hidden field for nice email subject -->
+        <input type="hidden" name="_subject" value="New Contact Form Submission - AmericanTech.us">
+        
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <!-- Thank You / Success Message -->
+    <div id="success-message" class="success-message" style="display: none;">
+        <h3>Thank you!</h3>
+        <p>Your message has been sent successfully.<br>I’ll get back to you as soon as possible.</p>
+    </div>
+</section>
     </main>
 
     <footer>
     <p>&copy; 2026 AmericanTech.US • Kansas • All Rights Reserved</p>
     
     <p class="privacy-statement">
-        This site requires <strong>no cookies</strong> whatsoever.<br>
         No cookies. No trackers. No analytics. No algorithm.
     </p>
 </footer></p>
