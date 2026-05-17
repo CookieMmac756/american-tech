@@ -316,3 +316,33 @@ section {
     color: #cbd5e1;
     margin-bottom: 12px;
 }
+
+/* Phone Button - Responsive */
+.phone-btn {
+    display: inline-flex;
+    flex-direction: column;           /* default = stacked */
+    align-items: center;
+    gap: 4px;
+    padding: 14px 28px;
+}
+
+.phone-btn .btn-text {
+    font-weight: bold;
+}
+
+.phone-btn .phone-number {
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+/* Desktop: number appears next to text */
+@media (min-width: 600px) {
+    .phone-btn {
+        flex-direction: row;
+        gap: 12px;
+    }
+    
+    .phone-btn .phone-number {
+        font-size: 1rem;
+    }
+}
