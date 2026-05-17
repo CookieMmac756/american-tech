@@ -201,33 +201,28 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px 30px;           /* horizontal and vertical spacing */
+    gap: 25px;                    /* space between items */
+    align-items: center;
+}
+
+.legend {
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;                    /* space between items */
     align-items: center;
 }
 
 .legend span {
     display: inline-flex;
     align-items: center;
-    white-space: nowrap;      /* ← This keeps dot + text on same line */
-    gap: 8px;
+    gap: 8px;                     /* space between dot and text */
+    white-space: nowrap;          /* keeps dot + text together */
 }
-
-@media (min-width: 600px) {
-    .legend {
-        flex-direction: row;    /* back to horizontal on bigger screens */
-        gap: 25px;
-    }
-}
-
-.legend span {
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
-}
-
-.blue-dot  { display: inline-block; width: 12px; height: 12px; background: #3b82f6; border-radius: 50%; }
-.green-dot { display: inline-block; width: 12px; height: 12px; background: #22c55e; border-radius: 50%; }
-.grey-dot  { display: inline-block; width: 12px; height: 12px; background: #64748b; border-radius: 50%; }
 
 /* Lightbox */
 .modal {
