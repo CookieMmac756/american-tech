@@ -200,9 +200,36 @@ footer {
     margin-top: 15px;
 }
 
-.blue-dot  { display: inline-block; width: 12px; height: 12px; background: #3b82f6; border-radius: 50%; }
-.green-dot { display: inline-block; width: 12px; height: 12px; background: #22c55e; border-radius: 50%; }
-.grey-dot  { display: inline-block; width: 12px; height: 12px; background: #64748b; border-radius: 50%; }
+/* Shared dot styling */
+.blue-dot,
+.green-dot,
+.grey-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.blue-dot  { background: #3b82f6; }
+.green-dot { background: #22c55e; }
+.grey-dot  { background: #64748b; }
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .legend {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        max-width: 220px;
+        margin: 20px auto 0;
+    }
+
+    .legend span {
+        flex-shrink: 0;
+    }
+}
 
 /* Lightbox */
 .modal {
