@@ -193,24 +193,29 @@ footer {
 
 .service-map:hover { transform: scale(1.03); }
 
-/* Legend - Dot + Text stay together on same line */
 .legend {
     font-family: 'Consolas', 'Courier New', monospace;
     color: #64748b;
     font-size: 0.95rem;
     margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;                    /* space between each full item */
+    flex-direction: column;     /* stacks vertically on mobile */
     align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+}
+
+@media (min-width: 600px) {
+    .legend {
+        flex-direction: row;    /* back to horizontal on bigger screens */
+        gap: 25px;
+    }
 }
 
 .legend span {
     display: inline-flex;
     align-items: center;
-    gap: 8px;                     /* space between dot and text */
-    white-space: nowrap;          /* keeps dot + text together */
+    white-space: nowrap;
 }
 
 /* Make dots slightly larger and clearer */
