@@ -388,3 +388,17 @@ section {
 .cert-text-link:hover {
     color: #cbd5e1;           /* very subtle hover effect */
 }
+
+.modal-content {
+    max-width: 95%;
+    max-height: 90%;
+    border: 2px solid #64748b;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.modal-content.zoomed {
+    transform: scale(2);        /* zoom in 2x — feel free to change to 1.8 or 2.5 */
+    cursor: zoom-out;
+}
