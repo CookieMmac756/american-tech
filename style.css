@@ -346,3 +346,20 @@ section {
         font-size: 1rem;
     }
 }
+
+/* Certification Logos */
+.cert-logo {
+    height: 28px;                    /* small and clean */
+    width: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 3px;
+    filter: brightness(1.1);         /* makes them pop a bit on dark background */
+}
+
+/* Make sure list items still line up nicely */
+.certifications li {
+    display: flex;
+    align-items: center;
+    padding: 14px 0 14px 40px;
+}
