@@ -402,3 +402,15 @@ section {
     transform: scale(3);        /* zoom in 2x — feel free to change to 1.8 or 2.5 */
     cursor: zoom-out;
 }
+
+.privacy-statement {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 24px;          /* horizontal and vertical spacing */
+    margin-top: 12px;
+}
+
+.privacy-statement span {
+    white-space: nowrap;     /* keeps each phrase together */
+}
