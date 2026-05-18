@@ -414,3 +414,19 @@ section {
 .privacy-statement span {
     white-space: nowrap;     /* keeps each phrase together */
 }
+
+/* Copyright line - keep "All Rights Reserved" together */
+footer > p:first-child {
+    white-space: nowrap;           /* keeps whole line from breaking awkwardly */
+}
+
+@media (max-width: 600px) {
+    footer > p:first-child {
+        white-space: normal;       /* allow natural wrapping */
+    }
+    
+    /* Force "All Rights Reserved" to stay together */
+    footer > p:first-child span {
+        white-space: nowrap;
+    }
+}
