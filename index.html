@@ -264,5 +264,47 @@
             }
         });
     </script>
+
+    <script>
+    // Lightbox with Android Back button support
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const images = document.querySelectorAll('.service-map');
+        let isModalOpen = false;
+
+        // Open modal
+        images.forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+                isModalOpen = true;
+                
+                // Push a fake history state so Back button works
+                history.pushState({ modalOpen: true }, '');
+            });
+        });
+
+        // Close with X or clicking outside
+        document.querySelector('.close').addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Handle Android Back button
+        window.addEventListener('popstate', function(e) {
+            if (isModalOpen) {
+                closeModal();
+                // Prevent actual back navigation
+                history.pushState(null, '');
+            }
+        });
+
+        function closeModal() {
+            modal.style.display = "none";
+            isModalOpen = false;
+        }
+    });
+    </script> 
 </body>
 </html>
