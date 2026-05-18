@@ -1,62 +1,404 @@
-</footer>
+/* Techy Grey-Blue Code Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<!-- Scripts go here (at the bottom) -->
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #0f172a;           /* Deep slate blue-grey */
+    color: #e2e8f0;
+    line-height: 1.7;
+    padding: 20px;
+}
 
-<script>
-        // Lightbox for maps
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById("imageModal");
-            const modalImg = document.getElementById("modalImage");
-            const images = document.querySelectorAll('.service-map');
+header {
+    text-align: center;
+    padding: 50px 20px 40px;
+}
 
-            images.forEach(img => {
-                img.addEventListener('click', function() {
-                    modal.style.display = "flex";
-                    modalImg.src = this.src;
-                });
-            });
-    // Lightbox with click-to-zoom
-    document.addEventListener('DOMContentLoaded', function() {
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImage");
-        const images = document.querySelectorAll('.service-map');
-        let isZoomed = false;
+.logo {
+    max-width: 160px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 8px rgba(148, 163, 184, 0.3));
+}
 
-            document.querySelector('.close').addEventListener('click', () => {
-                modal.style.display = "none";
-        // Open modal when clicking a map
-        images.forEach(img => {
-            img.addEventListener('click', function() {
-                modal.style.display = "flex";
-                modalImg.src = this.src;
-                modalImg.classList.remove('zoomed');
-                isZoomed = false;
-});
-        });
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: #94a3b8;
+    font-size: 2.6rem;
+    letter-spacing: 3px;
+    font-weight: normal;
+}
 
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) modal.style.display = "none";
-            });
-        // Click the image inside the modal to zoom in/out
-        modalImg.addEventListener('click', function(e) {
-            e.stopPropagation();           // prevents closing the modal
-            isZoomed = !isZoomed;
-            if (isZoomed) {
-                this.classList.add('zoomed');
-            } else {
-                this.classList.remove('zoomed');
-            }
-        });
+.tagline {
+    color: #64748b;
+    font-size: 1.25rem;
+    margin-top: 12px;
+    font-family: 'Courier New', Courier, monospace;
+}
 
-        // Close modal with X or clicking outside the image
-        document.querySelector('.close').addEventListener('click', () => {
-            modal.style.display = "none";
-        });
+section {
+    max-width: 820px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) modal.style.display = "none";
-});
-    });
-</script>
+h2 {
+    color: #cbd5e1;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.55rem;
+    margin-bottom: 25px;
+    border-left: 4px solid #64748b;
+    padding-left: 14px;
+}
 
-<script>
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 12px 0 12px 30px;
+    border-bottom: 1px solid #334155;
+    position: relative;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+ul li:before {
+    content: "- ";
+    color: #94a3b8;
+    position: absolute;
+    left: 8px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #94a3b8;
+    border: 2px solid #94a3b8;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: #94a3b8;
+    color: #0f172a;
+    transform: translateY(-3px);
+}
+
+.contact {
+    text-align: center;
+}
+
+.phone {
+    margin-top: 15px;
+    color: #94a3b8;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #64748b;
+    font-size: 0.95rem;
+    border-top: 1px solid #334155;
+    margin-top: 60px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    h1 { font-size: 2.1rem; letter-spacing: 2px; }
+    .tagline { font-size: 1.05rem; }
+}
+
+.certifications {
+    text-align: center;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.certifications h2 {
+    color: #cbd5e1;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 15px;
+}
+
+.certifications ul {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    max-width: 520px;
+    list-style: none;
+    padding: 0;
+}
+
+.certifications li {
+    font-family: 'Consolas', 'Courier New', monospace;
+    padding: 14px 0 14px 40px;
+    border-bottom: 1px solid #334155;
+    position: relative;
+    color: #e2e8f0;
+}
+
+.certifications li:before {
+    content: "- ";
+    color: #94a3b8;
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+}
+
+/* Make the last item have no bottom border */
+.certifications li:last-child {
+    border-bottom: none;
+}
+
+.currently-working {
+    color: #94a3b8;
+    font-style: italic;
+    margin-top: 35px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+}
+
+.service-areas { text-align: center; }
+
+.maps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.map-item { max-width: 520px; width: 100%; cursor: zoom-in; }
+
+.service-map {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    transition: transform 0.2s;
+}
+
+.service-map:hover { transform: scale(1.03); }
+
+.legend {
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 15px;
+}
+
+/* Shared dot styling */
+.blue-dot,
+.green-dot,
+.grey-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.blue-dot  { background: #3b82f6; }
+.green-dot { background: #22c55e; }
+.grey-dot  { background: #64748b; }
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .legend {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        max-width: 220px;
+        margin: 20px auto 0;
+    }
+
+    .legend span {
+        flex-shrink: 0;
+    }
+}
+
+/* Lightbox */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 95%;
+    max-height: 90%;
+    border: 2px solid #64748b;
+    border-radius: 6px;
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #94a3b8;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover { color: #e2e8f0; }
+
+section {
+    margin-bottom: 70px;   /* more space on all devices */
+}
+
+@media (max-width: 600px) {
+    section {
+        margin-bottom: 60px;   /* extra spacing on phones */
+    }
+}
+
+.contact-form {
+    max-width: 520px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px;
+    background-color: #1e2937;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    color: #e2e8f0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #64748b;
+}
+
+.contact-form button {
+    margin-top: 10px;
+}
+
+.success-message {
+    text-align: center;
+    padding: 30px;
+    background-color: #1e2937;
+    border: 2px solid #94a3b8;
+    border-radius: 6px;
+    color: #94a3b8;
+    max-width: 520px;
+    margin: 30px auto 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.success-message h3 {
+    color: #cbd5e1;
+    margin-bottom: 12px;
+}
+
+/* Phone Button - Responsive */
+.phone-btn {
+    display: inline-flex;
+    flex-direction: column;           /* default = stacked */
+    align-items: center;
+    gap: 4px;
+    padding: 14px 28px;
+}
+
+.phone-btn .btn-text {
+    font-weight: bold;
+}
+
+.phone-btn .phone-number {
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+/* Desktop: number appears next to text */
+@media (min-width: 600px) {
+    .phone-btn {
+        flex-direction: row;
+        gap: 12px;
+    }
+    
+    .phone-btn .phone-number {
+        font-size: 1rem;
+    }
+}
+
+/* Certification Logos */
+.cert-logo {
+    height: 28px;                    /* small and clean */
+    width: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 3px;
+    filter: brightness(1.1);         /* makes them pop a bit on dark background */
+}
+
+/* Make sure list items still line up nicely */
+.certifications li {
+    display: flex;
+    align-items: center;
+    padding: 14px 0 14px 40px;
+}
+
+/* Make logos a bit larger on desktop only */
+.cert-logo {
+    height: 28px;           /* mobile size */
+    width: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+@media (min-width: 600px) {
+    .cert-logo {
+        height: 36px;       /* slightly larger on desktop */
+    }
+}
+
+/* Make the text a link but look like plain text */
+.cert-text-link {
+    color: inherit;           /* same color as normal text */
+    text-decoration: none;    /* no underline */
+}
+
+.cert-text-link:hover {
+    color: #cbd5e1;           /* very subtle hover effect */
+}
+
+.modal-content {
+    max-width: 95%;
+    max-height: 90%;
+    border: 2px solid #64748b;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.modal-content.zoomed {
+    transform: scale(3);        /* zoom in 2x — feel free to change to 1.8 or 2.5 */
+    cursor: zoom-out;
+}
