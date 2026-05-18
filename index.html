@@ -196,41 +196,58 @@
     <!-- Scripts go here (at the bottom) -->
 
     <script>
-    // Lightbox with click-to-zoom
+    // Lightbox with zoom-at-click/touch point
     document.addEventListener('DOMContentLoaded', function() {
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImage");
         const images = document.querySelectorAll('.service-map');
         let isZoomed = false;
 
-        // Open modal when clicking a map
+        // Open modal when clicking a map on the page
         images.forEach(img => {
             img.addEventListener('click', function() {
                 modal.style.display = "flex";
                 modalImg.src = this.src;
-                modalImg.classList.remove('zoomed');
-                isZoomed = false;
+                resetZoom();
             });
         });
 
-        // Click the image inside the modal to zoom in/out
+        function resetZoom() {
+            isZoomed = false;
+            modalImg.style.transform = 'scale(1)';
+            modalImg.style.transformOrigin = 'center center';
+        }
+
+        // Click / tap on the big image inside the modal = zoom at that exact point
         modalImg.addEventListener('click', function(e) {
-            e.stopPropagation();           // prevents closing the modal
-            isZoomed = !isZoomed;
-            if (isZoomed) {
-                this.classList.add('zoomed');
+            e.stopPropagation();   // don't close the modal
+
+            if (!isZoomed) {
+                // Get click position relative to the image
+                const rect = modalImg.getBoundingClientRect();
+                const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
+                const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
+
+                // Zoom in at the clicked point
+                modalImg.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+                modalImg.style.transform = 'scale(2.5)';   // you can change 2.5 to 2 or 3
+                isZoomed = true;
             } else {
-                this.classList.remove('zoomed');
+                resetZoom();
             }
         });
 
-        // Close modal with X or clicking outside the image
+        // Close with X or clicking outside the image
         document.querySelector('.close').addEventListener('click', () => {
             modal.style.display = "none";
+            resetZoom();
         });
 
         modal.addEventListener('click', (e) => {
-            if (e.target === modal) modal.style.display = "none";
+            if (e.target === modal) {
+                modal.style.display = "none";
+                resetZoom();
+            }
         });
     });
     </script>
