@@ -111,10 +111,26 @@ footer {
     margin-top: 60px;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-    h1 { font-size: 2.1rem; letter-spacing: 2px; }
-    .tagline { font-size: 1.05rem; }
+/* Copyright line */
+footer > p:first-child {
+    margin-bottom: 20px;
+}
+
+/* Privacy statement - stacks nicely on mobile */
+.privacy-statement {
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #64748b;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+    align-items: center;
+    max-width: 520px;
+}
+
+.privacy-statement span {
+    white-space: nowrap;   /* keeps each phrase together */
 }
 
 .certifications {
