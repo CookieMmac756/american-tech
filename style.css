@@ -363,3 +363,28 @@ section {
     align-items: center;
     padding: 14px 0 14px 40px;
 }
+
+/* Make logos a bit larger on desktop only */
+.cert-logo {
+    height: 28px;           /* mobile size */
+    width: auto;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+@media (min-width: 600px) {
+    .cert-logo {
+        height: 36px;       /* slightly larger on desktop */
+    }
+}
+
+/* Make the text a link but look like plain text */
+.cert-text-link {
+    color: inherit;           /* same color as normal text */
+    text-decoration: none;    /* no underline */
+}
+
+.cert-text-link:hover {
+    color: #cbd5e1;           /* very subtle hover effect */
+}
